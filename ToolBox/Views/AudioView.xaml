@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="ToolBox.Views.AudioView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ToolBox.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:Name="navigationViewControl" 
+                        Loaded="NavigationView_Loaded" 
+                        SelectionChanged="NavigationView_Selectionchanged" 
+                        IsBackEnabled="true"
+                        BackRequested="BackToHome">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="MusicInfo" Content="Text to Speech" Tag="TextToSpeech"/>
+                <NavigationViewItem Icon="MusicInfo" Content="Youtube to Mp3" Tag="Mp3Converter"/>
+            </NavigationView.MenuItems>
+
+            <ScrollViewer>
+                <Frame x:Name="ContentFrame"/>
+            </ScrollViewer>
+
+        </NavigationView>
+
+    </Grid>
+</Page>

@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="ToolBox.SpeechView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ToolBox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock Text="Write something to say!" 
+                   FontSize="36"
+                   HorizontalAlignment="Center"
+                   Margin="0,250,0,0"/>
+
+        <TextBox x:Name="ToSay" 
+                 Width="600" 
+                 Height="40"/>
+
+        <Button Content="Say it!"
+                Width="200"
+                HorizontalAlignment="Center"
+                Margin="0,150,0,0"
+                Click="Button_Click"/>
+
+        <Button Content="Save as mp3 File?"
+                FontSize="15"
+                Width="150"
+                HorizontalAlignment="Center"
+                Margin="0,300,0,0"
+                Click="SaveAsAudio"/>
+
+        <Popup x:Name="successPopup" Width="250" Height="30" HorizontalAlignment="Center" Margin="0,400,0,0" IsLightDismissEnabled="True" IsOpen="False">
+            <StackPanel Background="Black">
+                <TextBlock x:Name="successMessage"/>
+            </StackPanel>
+        </Popup>
+
+    </Grid>
+</Page>
