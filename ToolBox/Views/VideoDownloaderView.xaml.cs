@@ -152,6 +152,9 @@ namespace ToolBox.Views
                     Debug.WriteLine("System File was not created");
                 }
 
+                await Task.Delay(1000);
+                await ResetProgressBar();
+
             }
             else
             {
@@ -188,6 +191,14 @@ namespace ToolBox.Views
                 await dataWriter.StoreAsync();
                 await outputStream.FlushAsync();
             }
+        }
+
+        public async Task ResetProgressBar()
+        {
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                progessBar.Value = 0;
+            });
         }
     }
 }
