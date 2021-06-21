@@ -53,7 +53,7 @@ namespace ToolBox.Views
 
         private void BackToHome(NavigationView sender, NavigationViewBackRequestedEventArgs args)
         {
-
+            this.Frame.Navigate(typeof(MainPage));
         }
     }
 }

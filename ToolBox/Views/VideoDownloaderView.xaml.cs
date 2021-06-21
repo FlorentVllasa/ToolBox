@@ -145,7 +145,7 @@ namespace ToolBox.Views
 
                 if (systemFile != null)
                 {
-                    await WriteBytesIntoVideoFile(systemFile, selectedVideo).ConfigureAwait(false);
+                    await Task.Run(() => WriteBytesIntoVideoFile(systemFile, selectedVideo));
                 }
                 else
                 {
@@ -174,7 +174,7 @@ namespace ToolBox.Views
 
 
                 for (int i = 0; i < videoBytesArrayLength; i++)
-                {   
+                {
                     if (i == byteArrayFourth)
                     {
                         await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
